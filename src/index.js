@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+
 import * as serviceWorker from './serviceWorker';
-import Mat from './Mat';
-// import Mat2 from './Mat2';
+import Mainpage from './pages/Mainpage/MainPage'
 
 
-// import Dashboard from './Dashboard';
+
+
 
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <Dashboard /> */}
-    <Mat />
+    <Mainpage/>
     
   </React.StrictMode>,
   document.getElementById('root')
