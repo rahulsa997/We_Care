@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withStyles } from "@material-ui/core/styles";
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Axios from 'axios';
+// import Axios from 'axios';
 import TextField from '@material-ui/core/TextField';
 import '../Mainpage/Mainpage.css'
 class MainPage extends Component {
@@ -23,26 +23,26 @@ class MainPage extends Component {
       'username': this.state.username,
       'password': this.state.password
     }
-    const role = Axios.get('http://localhost:8080/examples/login.jsp', { params: data }).then(response => {
-      console.log(response)
-      if (response.data.role === 'Nothing') {
-        alert('Wrong Password or Id')
-      } else {
-        localStorage.setItem('user', this.state.username)
-        localStorage.setItem('currentUser', true)
-        if (response.data.role === 'admin')
-          this.props.history.push('/demo')
-        else if (response.data.role === 'Student')
-          this.props.history.push('/StudentDash')
-        else
-          this.props.history.push('/GatekeeperDash')
+    // const role = Axios.get('http://localhost:8080/examples/login.jsp', { params: data }).then(response => {
+    //   console.log(response)
+    //   if (response.data.role === 'Nothing') {
+    //     alert('Wrong Password or Id')
+    //   } else {
+    //     localStorage.setItem('user', this.state.username)
+    //     localStorage.setItem('currentUser', true)
+    //     if (response.data.role === 'admin')
+    //       this.props.history.push('/demo')
+    //     else if (response.data.role === 'Student')
+    //       this.props.history.push('/StudentDash')
+    //     else
+    //       this.props.history.push('/GatekeeperDash')
 
-      }
+    //   }
 
-    }).catch(err => {
-      console.log("Failed");
+    // }).catch(err => {
+    //   console.log("Failed");
 
-    })
+    // })
   }
   render() {
     localStorage.setItem('currentUser', false)
